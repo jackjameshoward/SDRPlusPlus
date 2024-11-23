@@ -212,7 +212,7 @@ namespace ImGui {
         }
         {
             std::lock_guard<std::mutex> lck(texMtx);
-            window->DrawList->AddImage((void*)(intptr_t)textureId, wfMin, wfMax);
+            window->DrawList->AddImage((intptr_t)textureId, wfMin, wfMax);
         }
         
         ImVec2 mPos = ImGui::GetMousePos();

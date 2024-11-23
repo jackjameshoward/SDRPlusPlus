@@ -41,7 +41,7 @@ namespace ImGui {
             updateTexture();
         }
 
-        window->DrawList->AddImage((void*)(intptr_t)textureId, min, ImVec2(min.x + width, min.y + height));
+        window->DrawList->AddImage((intptr_t)textureId, min, ImVec2(min.x + width, min.y + height));
     }
 
     void ImageDisplay::swap() {
