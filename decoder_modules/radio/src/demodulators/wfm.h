@@ -264,7 +264,7 @@ namespace demod {
         double getMaxBandwidth() { return getIFSampleRate(); }
         bool getBandwidthLocked() { return false; }
         double getDefaultSnapInterval() { return 100000.0; }
-        int getVFOReference() { return ImGui::WaterfallVFO::REF_CENTER; }
+        int getVFOReference() { return WaterfallVFO::REF_CENTER; }
         bool getDeempAllowed() { return true; }
         bool getPostProcEnabled() { return true; }
         int getDefaultDeemphasisMode() { return DEEMP_MODE_50US; }
@@ -297,7 +297,7 @@ namespace demod {
             _this->diag.releaseBuffer();
         }
 
-        static void fftRedraw(ImGui::WaterFall::FFTRedrawArgs args, void* ctx) {
+        static void fftRedraw(WaterFall::FFTRedrawArgs args, void* ctx) {
             WFM* _this = (WFM*)ctx;
             if (!_this->_rds) { return; }
 
@@ -340,7 +340,7 @@ namespace demod {
         dsp::demod::BroadcastFM demod;
         RDSDemod rdsDemod;
         dsp::sink::Handler<uint8_t> hs;
-        EventHandler<ImGui::WaterFall::FFTRedrawArgs> fftRedrawHandler;
+        EventHandler<WaterFall::FFTRedrawArgs> fftRedrawHandler;
 
         dsp::buffer::Reshaper<float> reshape;
         dsp::sink::Handler<float> diagHandler;

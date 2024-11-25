@@ -6,7 +6,7 @@ VFOManager::VFO::VFO(std::string name, int reference, double offset, double band
     this->name = name;
     _bandwidth = bandwidth;
     dspVFO = sigpath::iqFrontEnd.addVFO(name, sampleRate, bandwidth, offset);
-    wtfVFO = new ImGui::WaterfallVFO;
+    wtfVFO = new WaterfallVFO;
     wtfVFO->setReference(reference);
     wtfVFO->setBandwidth(bandwidth);
     wtfVFO->setOffset(offset);
@@ -200,7 +200,7 @@ bool VFOManager::vfoExists(std::string name) {
     return (vfos.find(name) != vfos.end());
 }
 
-void VFOManager::updateFromWaterfall(ImGui::WaterFall* wtf) {
+void VFOManager::updateFromWaterfall(WaterFall* wtf) {
     for (auto const& [name, vfo] : vfos) {
         if (vfo->wtfVFO->centerOffsetChanged) {
             vfo->wtfVFO->centerOffsetChanged = false;

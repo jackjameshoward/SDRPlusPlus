@@ -44,7 +44,7 @@ public:
     WeatherSatDecoderModule(std::string name) {
         this->name = name;
 
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 1000000, 1000000, 1000000, 1000000, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 1000000, 1000000, 1000000, 1000000, true);
 
         decoders["NOAA HRPT"] = new NOAAHRPTDecoder(vfo, name);
 
@@ -69,7 +69,7 @@ public:
     void postInit() {}
 
     void enable() {
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 1000000, 1000000, 1000000, 1000000, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 1000000, 1000000, 1000000, 1000000, true);
         for (auto const& [name, dec] : decoders) { dec->setVFO(vfo); }
         decoder->select();
         decoder->start();

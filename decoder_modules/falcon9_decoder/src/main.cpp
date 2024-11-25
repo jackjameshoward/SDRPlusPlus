@@ -41,7 +41,7 @@ public:
     Falcon9DecoderModule(std::string name) {
         this->name = name;
 
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 4000000, INPUT_SAMPLE_RATE, 4000000, 4000000, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 4000000, INPUT_SAMPLE_RATE, 4000000, 4000000, true);
 
         // dsp::Splitter<float> split;
         // dsp::Reshaper<float> reshape;
@@ -88,7 +88,7 @@ public:
     void postInit() {}
 
     void enable() {
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 4000000, INPUT_SAMPLE_RATE, 4000000, 4000000, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 4000000, INPUT_SAMPLE_RATE, 4000000, 4000000, true);
 
         demod.setInput(vfo->output);
 

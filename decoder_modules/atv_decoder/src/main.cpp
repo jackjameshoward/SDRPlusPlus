@@ -36,7 +36,7 @@ class ATVDecoderModule : public ModuleManager::Instance {
     ATVDecoderModule(std::string name) : img(720, 625) {
         this->name = name;
 
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 8000000.0f, SAMPLE_RATE, SAMPLE_RATE, SAMPLE_RATE, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 8000000.0f, SAMPLE_RATE, SAMPLE_RATE, SAMPLE_RATE, true);
 
         demod.init(vfo->output, SAMPLE_RATE, SAMPLE_RATE / 2.0f);
         sync.init(&demod.out, 1.0f, 1e-6, 1.0, 0.05);

@@ -39,7 +39,7 @@ public:
         //protocols.define("FLEX", PROTOCOL_FLEX);
 
         // Initialize VFO with default values
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 12500, 24000, 12500, 12500, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 12500, 24000, 12500, 12500, true);
         vfo->setSnapInterval(1);
 
         // Select the protocol
@@ -64,7 +64,7 @@ public:
 
     void enable() {
         double bw = gui::waterfall.getBandwidth();
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, std::clamp<double>(0, -bw / 2.0, bw / 2.0), 12500, 24000, 12500, 12500, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, std::clamp<double>(0, -bw / 2.0, bw / 2.0), 12500, 24000, 12500, 12500, true);
         vfo->setSnapInterval(1);
 
         decoder->setVFO(vfo);

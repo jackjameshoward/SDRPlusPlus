@@ -31,7 +31,7 @@ public:
         friend class VFOManager;
 
         dsp::channel::RxVFO* dspVFO;
-        ImGui::WaterfallVFO* wtfVFO;
+        WaterfallVFO* wtfVFO;
 
     private:
         std::string name;
@@ -56,7 +56,7 @@ public:
     int getReference(std::string name);
     bool vfoExists(std::string name);
 
-    void updateFromWaterfall(ImGui::WaterFall* wtf);
+    void updateFromWaterfall(WaterFall* wtf);
 
     Event<VFOManager::VFO*> onVfoCreated;
     Event<VFOManager::VFO*> onVfoDelete;

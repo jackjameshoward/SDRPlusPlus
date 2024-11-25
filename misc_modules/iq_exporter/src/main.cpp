@@ -432,7 +432,7 @@ private:
         // Create VFO or bind IQ stream
         if (newMode == MODE_VFO) {
             // Create VFO
-            vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, samplerate, samplerate, samplerate, samplerate, true);
+            vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, samplerate, samplerate, samplerate, samplerate, true);
 
             // Set its output as the input to the DSP
             reshape.setInput(vfo->output);

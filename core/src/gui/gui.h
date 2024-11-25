@@ -8,7 +8,7 @@
 #include <gui/theme_manager.h>
 
 namespace gui {
-    SDRPP_EXPORT ImGui::WaterFall waterfall;
+    SDRPP_EXPORT WaterFall waterfall;
     SDRPP_EXPORT FrequencySelect freqSelect;
     SDRPP_EXPORT Menu menu;
     SDRPP_EXPORT ThemeManager themeManager;

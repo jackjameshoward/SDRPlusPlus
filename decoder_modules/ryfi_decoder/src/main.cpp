@@ -35,7 +35,7 @@ public:
     RyFiDecoderModule(std::string name) {
         this->name = name;
 
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, INPUT_BANDWIDTH, INPUT_SAMPLE_RATE, INPUT_BANDWIDTH, INPUT_BANDWIDTH, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, INPUT_BANDWIDTH, INPUT_SAMPLE_RATE, INPUT_BANDWIDTH, INPUT_BANDWIDTH, true);
         rx.init(vfo->output, INPUT_BAUDRATE, INPUT_SAMPLE_RATE);
         reshape.init(rx.softOut, SYMBOL_DIAG_COUNT, (INPUT_BAUDRATE / SYMBOL_DIAG_RATE) - SYMBOL_DIAG_COUNT);
         symSink.init(&reshape.out, symSinkHandler, this);
@@ -60,7 +60,7 @@ public:
 
     void enable() {
         double bw = gui::waterfall.getBandwidth();
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, std::clamp<double>(0, -bw / 2.0, bw / 2.0), INPUT_BANDWIDTH, INPUT_SAMPLE_RATE, INPUT_BANDWIDTH, INPUT_BANDWIDTH, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, std::clamp<double>(0, -bw / 2.0, bw / 2.0), INPUT_BANDWIDTH, INPUT_SAMPLE_RATE, INPUT_BANDWIDTH, INPUT_BANDWIDTH, true);
 
         rx.setInput(vfo->output);
 

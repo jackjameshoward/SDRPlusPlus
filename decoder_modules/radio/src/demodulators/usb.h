@@ -74,7 +74,7 @@ namespace demod {
         double getMaxBandwidth() { return getIFSampleRate() / 2.0; }
         bool getBandwidthLocked() { return false; }
         double getDefaultSnapInterval() { return 100.0; }
-        int getVFOReference() { return ImGui::WaterfallVFO::REF_LOWER; }
+        int getVFOReference() { return WaterfallVFO::REF_LOWER; }
         bool getDeempAllowed() { return false; }
         bool getPostProcEnabled() { return true; }
         int getDefaultDeemphasisMode() { return DEEMP_MODE_NONE; }

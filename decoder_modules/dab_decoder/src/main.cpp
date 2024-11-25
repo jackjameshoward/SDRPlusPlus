@@ -43,7 +43,7 @@ public:
         config.release(true);
 
         // Initialize VFO
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, VFO_BANDWIDTH, INPUT_SAMPLE_RATE, VFO_BANDWIDTH, VFO_BANDWIDTH, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, VFO_BANDWIDTH, INPUT_SAMPLE_RATE, VFO_BANDWIDTH, VFO_BANDWIDTH, true);
         vfo->setSnapInterval(250);
 
         // Initialize DSP here
@@ -76,7 +76,7 @@ public:
 
     void enable() {
         double bw = gui::waterfall.getBandwidth();
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, std::clamp<double>(0, -bw / 2.0, bw / 2.0), VFO_BANDWIDTH, INPUT_SAMPLE_RATE, VFO_BANDWIDTH, VFO_BANDWIDTH, true);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, std::clamp<double>(0, -bw / 2.0, bw / 2.0), VFO_BANDWIDTH, INPUT_SAMPLE_RATE, VFO_BANDWIDTH, VFO_BANDWIDTH, true);
         vfo->setSnapInterval(250);
 
         // Set Input of demod here

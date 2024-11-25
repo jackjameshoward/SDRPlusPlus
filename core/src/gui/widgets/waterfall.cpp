@@ -89,7 +89,6 @@ inline void doZoom(int offset, int width, int inSize, int outSize, float* in, fl
     }
 }
 
-namespace ImGui {
     WaterFall::WaterFall() {
         fftMin = -70.0;
         fftMax = 0.0;
@@ -257,7 +256,7 @@ namespace ImGui {
         ImVec2 dragOrigin(mousePos.x - drag.x, mousePos.y - drag.y);
 
         bool mouseHovered, mouseHeld;
-        bool mouseClicked = ImGui::ButtonBehavior(ImRect(fftAreaMin, wfMax), GetID("WaterfallID"), &mouseHovered, &mouseHeld,
+        bool mouseClicked = ImGui::ButtonBehavior(ImRect(fftAreaMin, wfMax), ImGui::GetID("WaterfallID"), &mouseHovered, &mouseHeld,
                                                   ImGuiButtonFlags_MouseButtonLeft | ImGuiButtonFlags_PressedOnClick);
 
         mouseInFFTResize = (dragOrigin.x > widgetPos.x && dragOrigin.x < widgetPos.x + widgetSize.x && dragOrigin.y >= widgetPos.y + newFFTAreaHeight - (2.0f * style::uiScale) && dragOrigin.y <= widgetPos.y + newFFTAreaHeight + (2.0f * style::uiScale));
@@ -808,7 +807,7 @@ namespace ImGui {
 
     void WaterFall::draw() {
         buf_mtx.lock();
-        window = GetCurrentWindow();
+        window = ImGui::GetCurrentWindow();
 
         widgetPos = ImGui::GetWindowContentRegionMin();
         widgetEndPos = ImGui::GetWindowContentRegionMax();
@@ -1423,4 +1422,3 @@ namespace ImGui {
     void WaterfallVFO::setSnapInterval(double interval) {
         snapInterval = interval;
     }
-};

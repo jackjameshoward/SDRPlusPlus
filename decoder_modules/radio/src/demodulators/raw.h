@@ -53,7 +53,7 @@ namespace demod {
         double getMaxBandwidth() { return audioSampleRate; }
         bool getBandwidthLocked() { return true; }
         double getDefaultSnapInterval() { return 2500.0; }
-        int getVFOReference() { return ImGui::WaterfallVFO::REF_CENTER; }
+        int getVFOReference() { return WaterfallVFO::REF_CENTER; }
         bool getDeempAllowed() { return false; }
         bool getPostProcEnabled() { return false; }
         int getDefaultDeemphasisMode() { return DEEMP_MODE_NONE; }

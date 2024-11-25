@@ -631,7 +631,7 @@ private:
         }
     }
 
-    static void fftRedraw(ImGui::WaterFall::FFTRedrawArgs args, void* ctx) {
+    static void fftRedraw(WaterFall::FFTRedrawArgs args, void* ctx) {
         FrequencyManagerModule* _this = (FrequencyManagerModule*)ctx;
         if (_this->bookmarkDisplayMode == BOOKMARK_DISP_MODE_OFF) { return; }
 
@@ -677,7 +677,7 @@ private:
 
     bool mouseAlreadyDown = false;
     bool mouseClickedInLabel = false;
-    static void fftInput(ImGui::WaterFall::InputHandlerArgs args, void* ctx) {
+    static void fftInput(WaterFall::InputHandlerArgs args, void* ctx) {
         FrequencyManagerModule* _this = (FrequencyManagerModule*)ctx;
         if (_this->bookmarkDisplayMode == BOOKMARK_DISP_MODE_OFF) { return; }
 
@@ -800,8 +800,8 @@ private:
     bool deleteListOpen = false;
     bool deleteBookmarksOpen = false;
 
-    EventHandler<ImGui::WaterFall::FFTRedrawArgs> fftRedrawHandler;
-    EventHandler<ImGui::WaterFall::InputHandlerArgs> inputHandler;
+    EventHandler<WaterFall::FFTRedrawArgs> fftRedrawHandler;
+    EventHandler<WaterFall::InputHandlerArgs> inputHandler;
 
     std::map<std::string, FrequencyBookmark> bookmarks;
 

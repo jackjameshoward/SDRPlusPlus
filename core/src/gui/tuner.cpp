@@ -29,7 +29,7 @@ namespace tuner {
         double viewBW = gui::waterfall.getViewBandwidth();
         double BW = gui::waterfall.getBandwidth();
 
-        ImGui::WaterfallVFO* vfo = gui::waterfall.vfos[vfoName];
+        WaterfallVFO* vfo = gui::waterfall.vfos[vfoName];
 
         double currentOff = vfo->centerOffset;
         double currentTune = gui::waterfall.getCenterFrequency() + vfo->generalOffset;

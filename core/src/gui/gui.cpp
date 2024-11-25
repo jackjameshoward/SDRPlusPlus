@@ -2,7 +2,7 @@
 
 namespace gui {
     MainWindow mainWindow;
-    ImGui::WaterFall waterfall;
+    WaterFall waterfall;
     FrequencySelect freqSelect;
     ThemeManager themeManager;
     Menu menu;

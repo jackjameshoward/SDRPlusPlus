@@ -261,7 +261,7 @@ void MainWindow::draw() {
     ImGui::Begin("Main", NULL, WINDOW_FLAGS);
     ImVec4 textCol = ImGui::GetStyleColorVec4(ImGuiCol_Text);
 
-    ImGui::WaterfallVFO* vfo = NULL;
+    WaterfallVFO* vfo = NULL;
     if (gui::waterfall.selectedVFO != "") {
         vfo = gui::waterfall.vfos[gui::waterfall.selectedVFO];
     }

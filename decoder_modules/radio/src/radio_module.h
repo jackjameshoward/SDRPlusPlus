@@ -60,7 +60,7 @@ public:
         config.release(created);
 
         // Initialize the VFO
-        vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 200000, 200000, 50000, 200000, false);
+        vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 200000, 200000, 50000, 200000, false);
         onUserChangedBandwidthHandler.handler = vfoUserChangedBandwidthHandler;
         onUserChangedBandwidthHandler.ctx = this;
         vfo->wtfVFO->onUserChangedBandwidth.bindHandler(&onUserChangedBandwidthHandler);
@@ -127,7 +127,7 @@ public:
     void enable() {
         enabled = true;
         if (!vfo) {
-            vfo = sigpath::vfoManager.createVFO(name, ImGui::WaterfallVFO::REF_CENTER, 0, 200000, 200000, 50000, 200000, false);
+            vfo = sigpath::vfoManager.createVFO(name, WaterfallVFO::REF_CENTER, 0, 200000, 200000, 50000, 200000, false);
             vfo->wtfVFO->onUserChangedBandwidth.bindHandler(&onUserChangedBandwidthHandler);
         }
         ifChain.setInput(vfo->output, [=](dsp::stream<dsp::complex_t>* out){ ifChainOutputChangeHandler(out, this); });
